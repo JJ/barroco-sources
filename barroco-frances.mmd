@@ -1,0 +1,50 @@
+graph TD
+    %% Influencias Externas y Maestros Italianos
+    MA[Michelangelo]
+    Bernini[Gian Lorenzo Bernini]
+    Algardi[Alessandro Algardi]
+    Duquesnoy[François Duquesnoy]
+    Cortona[Pietro da Cortona]
+    Antiq[Antigüedad Clásica]
+
+    %% Escultores Franceses
+    NG[Nicolas Guillain]
+    SG[Simón Guillain]
+    JW[Jean II Warin]
+    JS[Jacques Sarrazin]
+    PP[Pierre Puget]
+    FG[François Girardon]
+    AC[Antoine Coyzevox]
+    GC[Guillaume Coustou]
+    NC[Nicolás Coustou]
+    EB[Edme Bouchardon]
+    RMS[René Michel Slodtz]
+    JBP[Jean-Baptiste Pigalle]
+    JBL[Jean-Baptiste II Lemoyne]
+    JAH[Jean-Antoine Houdon]
+    PL[Pierre Legros el Joven]
+
+    %% Relaciones de Aprendizaje / Discipulado
+    NG -- "Maestro de" --> JS
+    SG_Pat[Taller Paterno] -- "Formó a" --> SG
+    Algardi -- "Estudió con" --> SG
+    Cortona -- "Instruyó como pintor a" --> PP
+    AC -- "Maestro y tío de" --> GC
+    AC -- "Maestro y tío de" --> NC
+    GC -- "Maestro de" --> EB
+    RMS_Pad[Padre de Slodtz] -- "Formó a" --> RMS
+    JBL -- "Maestro de" --> JAH
+
+    %% Relaciones de Influencia, Encuentros e Imitación
+    Bernini -- "Conocido por" --> JS
+    Duquesnoy -- "Conocido por" --> JS
+    Bernini -- "Influencia clara en" --> PP
+    MA -- "Referencia constante para" --> PP
+    Bernini -- "Conoció a" --> FG
+    Antiq -- "Estudio y defensa de" --> JS
+    Antiq -- "Imitación (Apolo Belvedere)" --> FG
+    MA -- "Estudio de" --> JS
+    Bernini -- "Seguidor de (en Roma)" --> PL
+    Algardi -- "Seguidor de (en Roma)" --> PL
+    Duquesnoy -- "Seguidor de (en Roma)" --> PL
+    Antiq -- "Mezcla con barroco" --> EB

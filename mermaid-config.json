@@ -1,0 +1,10 @@
+{
+  "flowchart": {
+    "nodeSpacing": 10,
+    "rankSpacing": 10,
+    "curve": "basis"
+  },
+  "themeVariables": {
+    "fontSize": "14px"
+  }
+}
