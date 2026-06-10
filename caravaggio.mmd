@@ -9,6 +9,14 @@ graph TD
         N_Italia[Maestros Lombardo-Venecianos: Lotto, Moretto] -- "Naturalismo y verismo" --> C
     end
 
+    %% Clasicistas
+    subgraph Clasicistas
+        Reni[Guido Reni]
+        Carracci[Annibale Carracci]
+        Domenichino
+        Cortona[Pietro da Cortona]
+    end
+    
     %% Nodo Central
     C((<b>Caravaggio</b>))
 
@@ -17,7 +25,7 @@ graph TD
         C -- "Naturalismo crudo y luz dramática" --> Artemisia[Artemisia Gentileschi]
         C -- "Uso psicológico de la luz" --> Guercino[Il Guercino]
         C -- "Nocturnos y figuras monumentales" --> LaTour[Georges de La Tour]
-        C -- "Tenebrismo en etapas tempranas/tardías" --> Reni[Guido Reni]
+        C -- "Tenebrismo en etapas tempranas/tardías" --> Reni
         C -- "Composiciones y temas populares" --> Vouet[Simon Vouet]
         C -- "Luz milagrosa emanada de figuras" --> Rubens[Peter Paul Rubens]
         C -- "Realismo descarnado y sombras fuertes" --> Ribera[José de Ribera]
@@ -29,7 +37,7 @@ graph TD
     %% Conexiones entre ellos
     Orazio[Orazio Gentileschi] -- "Padre y maestro de" --> Artemisia
     C -- "Herencia del naturalismo poético" --> Orazio
-    Carracci[Annibale Carracci] -- "Maestro de" --> Reni
+    Carracci -- "Maestro de" --> Reni
     Carracci -- "Maestro de" --> Lanfranco[Lanfranco]
     Reni -- "Rivalidad y coexistencia en Roma" --> C
     Lanfranco -- "Inspirado por luz de" --> Orazio
@@ -37,3 +45,5 @@ graph TD
     Rubens -- "Copia y asimilación de modelos" --> Velazquez
     Serodine -- "Oposición al estilo esmerado" --> Reni
     Serodine -- "Oposición al estilo esmerado" --> Domenichino
+    Cortona -- "Comparte estilo con" --> Domenichino
+    Cortona -- "Comparte estilo con" --> Carracci
