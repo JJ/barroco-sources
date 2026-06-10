@@ -1,20 +1,30 @@
 graph TD
     %% Influencias sobre Caravaggio
     subgraph Influencias_Recibidas [Raíces del Estilo]
+        direction TB
         SP[Simone Peterzano] -- "Aprendizaje en Milán (1584-88)" --> C
         CA[Cavalier d'Arpino] -- "Taller en Roma (1593)" --> C
         Savoldo[Savoldo] -- "Uso del claroscuro y luces nocturnas" --> C
         MA[Miguel Ángel] -- "Poses anatómicas y estudio del cuerpo" --> C
         Venecia[Escuela Veneciana / Giorgione] -- "Tonalismo y uso de la luz" --> C
         N_Italia[Maestros Lombardo-Venecianos: Lotto, Moretto] -- "Naturalismo y verismo" --> C
+        
+        %% Stacking to narrow the subgraph
+        SP ~~~ MA
+        CA ~~~ Venecia
+        Savoldo ~~~ N_Italia
     end
 
     %% Clasicistas
     subgraph Clasicistas
+        direction TB
         Reni[Guido Reni]
         Carracci[Annibale Carracci]
         Domenichino
         Cortona[Pietro da Cortona]
+        
+        Carracci ~~~ Reni
+        Domenichino ~~~ Cortona
     end
     
     %% Nodo Central
@@ -22,6 +32,7 @@ graph TD
 
     %% Influencia de Caravaggio sobre otros
     subgraph Caravaggistas_y_Seguidores [Legado e Impacto]
+        direction TB
         C -- "Naturalismo crudo y luz dramática" --> Artemisia[Artemisia Gentileschi]
         C -- "Uso psicológico de la luz" --> Guercino[Il Guercino]
         C -- "Nocturnos y figuras monumentales" --> LaTour[Georges de La Tour]
@@ -32,6 +43,13 @@ graph TD
         C -- "Fondo neutro y figuras que sobresalen" --> Velazquez[Velázquez]
         C -- "Inspiración en iluminación moderna" --> Scorsese[Martin Scorsese - Cine]
         C -- "Naturalismo que refleja fervor interior" --> Serodine[Giovanni Serodine]
+
+        %% Stacking to narrow the subgraph
+        Artemisia ~~~ Rubens
+        Guercino ~~~ Ribera
+        LaTour ~~~ Velazquez
+        Vouet ~~~ Scorsese
+        %% Serodine left to balance
     end
 
     %% Conexiones entre ellos
