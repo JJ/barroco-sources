@@ -1,0 +1,68 @@
+graph TD
+    %% Estilo para los subgrafos
+    classDef caravaggioStyle fill:#ffe6e6,stroke:#8b0000,stroke-width:2px;
+    classDef rubensStyle fill:#e6f2ff,stroke:#00008b,stroke-width:2px;
+    classDef indirectStyle fill:#f9f9f2,stroke:#d4af37,stroke-width:2px;
+    classDef overlapStyle fill:#f2e6ff,stroke:#4b0082,stroke-width:3px;
+
+    subgraph Caravaggio_Network [Esfera de Caravaggio: Tenebrismo y Realismo]
+        C((<b>Caravaggio</b>))
+        
+        %% Influencias Directas
+        C --> Orazio[Orazio Gentileschi]
+        C --> LaTour[Georges de La Tour]
+        C --> Reni[Guido Reni]
+        C --> Guercino[Il Guercino]
+        C --> Ribera[José de Ribera]
+        C --> Zurbaran[Zurbarán]
+        C --> Rubens_Node
+        
+        %% Influencias Indirectas / Siguientes pasos
+        Orazio --> Artemisia[Artemisia Gentileschi]
+        Orazio --> Lanfranco[Lanfranco]
+        
+        %% La cadena de Reni (Nudo crucial)
+        Reni --> Sirani[Elisabetta Sirani]
+        Reni --> Vouet[Simon Vouet]
+        Reni --> Poussin[Nicolas Poussin]
+        
+        %% La cadena de Ribera
+        Ribera --> Giordano[Luca Giordano]
+        
+        %% La cadena de Vouet
+        Vouet --> LeBrun[Charles Le Brun]
+    end
+
+    subgraph Rubens_Network [Esfera de Rubens: Color y Dinamismo]
+        Rubens_Node((<b>Rubens</b>))
+        
+        %% Influencias Directas
+        Rubens_Node --> VanDyck[Van Dyck]
+        Rubens_Node --> Jordaens[Jacob Jordaens]
+        Rubens_Node --> DeVos[Cornelis de Vos]
+        Rubens_Node --> Mignard[Pierre Mignard]
+        
+        %% Cadenas Indirectas
+        VanDyck --> Santiago[Miguel de Santiago]
+        
+        %% Difusión por grabados (Escuela de Quito)
+        Rubens_Node -- "Vía grabados" --> Santiago
+    end
+
+    %% Pintores con solape o síntesis total
+    C --> Velazquez[Velázquez]
+    Rubens_Node --> Velazquez
+    
+    C --> Murillo[Murillo]
+    Rubens_Node --> Murillo
+    
+    %% Cadenas Indirectas desde la Síntesis
+    Murillo --> Soriano[Juan Ruiz Soriano]
+    Murillo --> Gutierrez[Juan Simón Gutiérrez]
+    Murillo --> Santiago
+
+    %% Asignación de clases
+    class C,Orazio,LaTour,Artemisia,Ribera,Zurbaran,Lanfranco,Guercino caravaggioStyle;
+    class Reni,Sirani,Vouet,Poussin,LeBrun indirectStyle;
+    class Rubens_Node,VanDyck,Jordaens,DeVos,Mignard rubensStyle;
+    class Velazquez,Murillo,Giordano,Santiago,Soriano,Gutierrez overlapStyle;
